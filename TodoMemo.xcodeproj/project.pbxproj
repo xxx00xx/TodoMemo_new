@@ -15,6 +15,7 @@
 		E26A768F25191AD7003C97FA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E26A768D25191AD7003C97FA /* LaunchScreen.storyboard */; };
 		E26A769A25191AD7003C97FA /* TodoMemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26A769925191AD7003C97FA /* TodoMemoTests.swift */; };
 		E26A76A525191AD8003C97FA /* TodoMemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26A76A425191AD8003C97FA /* TodoMemoUITests.swift */; };
+		E26A76B525193B34003C97FA /* MemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26A76B425193B34003C97FA /* MemoViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		E26A76A025191AD8003C97FA /* TodoMemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TodoMemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E26A76A425191AD8003C97FA /* TodoMemoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoMemoUITests.swift; sourceTree = "<group>"; };
 		E26A76A625191AD8003C97FA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E26A76B425193B34003C97FA /* MemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +104,7 @@
 				E26A768225191AD4003C97FA /* AppDelegate.swift */,
 				E26A768425191AD4003C97FA /* SceneDelegate.swift */,
 				E26A768625191AD4003C97FA /* ViewController.swift */,
+				E26A76B425193B34003C97FA /* MemoViewController.swift */,
 				E26A768825191AD4003C97FA /* Main.storyboard */,
 				E26A768B25191AD7003C97FA /* Assets.xcassets */,
 				E26A768D25191AD7003C97FA /* LaunchScreen.storyboard */,
@@ -259,6 +262,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E26A76B525193B34003C97FA /* MemoViewController.swift in Sources */,
 				E26A768725191AD4003C97FA /* ViewController.swift in Sources */,
 				E26A768325191AD4003C97FA /* AppDelegate.swift in Sources */,
 				E26A768525191AD4003C97FA /* SceneDelegate.swift in Sources */,
