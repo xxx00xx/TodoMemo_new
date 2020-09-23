@@ -37,7 +37,7 @@
                     <navigationItem key="navigationItem" title="Todo" id="yPk-wm-cBu">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="jYw-w1-eIL">
                             <connections>
-                                <segue destination="SWi-2D-PLR" kind="presentation" id="Djh-yY-Wnq"/>
+                                <segue destination="SWi-2D-PLR" kind="presentation" modalPresentationStyle="fullScreen" id="Djh-yY-Wnq"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -54,7 +54,7 @@
             <objects>
                 <viewController id="SWi-2D-PLR" customClass="MemoViewController" customModule="TodoMemo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Jg9-Bl-C8V">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="title" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dmJ-tU-mx2">

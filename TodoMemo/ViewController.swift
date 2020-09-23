@@ -59,10 +59,13 @@ class ViewController:  UIViewController, UITableViewDataSource, UITableViewDeleg
             tableView.deleteRows(at: [indexPath], with: .fade)
         }
     }
-    
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
         
         table.delegate   = self
         table.dataSource = self
@@ -72,6 +75,20 @@ class ViewController:  UIViewController, UITableViewDataSource, UITableViewDeleg
             todoListArray = saveData.object(forKey: "TodoList") as! [String]
         }
     }
+    
+    /*
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        table.delegate   = self
+        table.dataSource = self
+        
+        //追加画面で入力した内容を取得する
+        if saveData.object(forKey: "TodoList") != nil {
+            todoListArray = saveData.object(forKey: "TodoList") as! [String]
+        }
+    }
+     */
 
     //MemoViewControllerからViewControllerへ画面遷移するためのクラス
     @IBAction func unwindToViewController(segue: UIStoryboardSegue) {}
