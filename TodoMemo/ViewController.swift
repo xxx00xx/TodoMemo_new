@@ -11,6 +11,13 @@ import UIKit
 class ViewController:  UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     @IBOutlet var table: UITableView!
+    
+    //@IBOutlet weak var stationList: UITableView!
+    //var stations:[Station] = [Station]()
+    //tableの中身
+    //@IBOutlet var todoLabel: UILabel!
+    //@IBOutlet var dateLabel: UILabel!
+    
     /*
     //TodoListを入れるための配列
     var  todoListArray = [String]()
@@ -33,7 +40,8 @@ class ViewController:  UIViewController, UITableViewDataSource, UITableViewDeleg
             let todoCell = tableView.dequeueReusableCell(withIdentifier: "TodoCell")
             
             todoCell?.textLabel?.text = todoListArray[indexPath.row]
-            
+           // todoCell?.textLabel?.text = dateListArray[indexPath.row]
+        
             return todoCell!
         
         //配列を作る

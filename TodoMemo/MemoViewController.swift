@@ -27,7 +27,7 @@ class MemoViewController: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //delegateの所在がMemoViewController
+        //delegateの所在がMemoViewControllerであると指定
         memoTextField.delegate = self
         // Do any additional setup after loading the view.
     }
@@ -36,17 +36,19 @@ class MemoViewController: UIViewController, UITextFieldDelegate {
         //日付のフォーマット&取得
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy/MM/dd"
-        label.text = "\(formatter.string(from: picker.date))"
-        
+        //label.text = "\(formatter.string(from: picker.date))"
     
         //配列に要素(入力内容)を追加する
         todoListArray.append(memoTextField.text!)
-        //dateListArray.append(label.text!)
+        dateListArray.append(formatter.string(from: picker.date))
          //追加ボタンを押したらフィールドを空にする
          memoTextField.text = ""
         //配列の中身をUserDefaultに追加する
         saveData.set(todoListArray, forKey: "TodoList" )
-        //saveData.set(dateListArray, forKey: "DateList" )
+        saveData.set(dateListArray, forKey: "DateList" )
+        
+        //一画面分戻らんのやが
+        //self.presentingViewController?.dismiss(animated: true, completion: nil)
         
         //let viewController: ViewController
         //viewController.viewDidLoad()
