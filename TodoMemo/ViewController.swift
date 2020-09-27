@@ -17,17 +17,7 @@ class ViewController:  UIViewController, UITableViewDataSource, UITableViewDeleg
     //tableの中身
     //@IBOutlet var todoLabel: UILabel!
     //@IBOutlet var dateLabel: UILabel!
-    
-    /*
-    //TodoListを入れるための配列
-    var  todoListArray = [String]()
 
-    //DateListを入れるための配列
-    var  dateListArray = [String]()
-
-    //UserDefaultへアクセス
-    var saveData: UserDefaults = UserDefaults.standard
-    */
     //表示するcell数を設定
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         //戻り値の設定(表示するcell数)
@@ -37,19 +27,16 @@ class ViewController:  UIViewController, UITableViewDataSource, UITableViewDeleg
     //表示するcellの中身を決める
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
+            //配列を作る
             let todoCell = tableView.dequeueReusableCell(withIdentifier: "TodoCell")
             
+            //配列の中身を作る
             todoCell?.textLabel?.text = todoListArray[indexPath.row]
            // todoCell?.textLabel?.text = dateListArray[indexPath.row]
         
+            //戻り値の設定（表示する中身)
             return todoCell!
-        
-        //配列を作る
-        /*let TodoCell : UITableViewCell = tableView.dequeueReusableCell(withIdentifier: "TodoCell", for: indexPath)
-        //配列の中身を作る
-        TodoCell.textLabel!.text = todoListArray[indexPath.row]
-        //戻り値の設定（表示する中身)
-        return TodoCell*/
+
     }
     
     //Delete Button
@@ -57,39 +44,29 @@ class ViewController:  UIViewController, UITableViewDataSource, UITableViewDeleg
         if editingStyle == .delete {
             todoListArray.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
+            //↓大事
+            saveData.removeObject(forKey: "TodoList")
+            saveData.set(todoListArray, forKey: "TodoList" )
         }
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
         
         table.delegate   = self
         table.dataSource = self
         
-        //追加画面で入力した内容を取得する
-        if saveData.object(forKey: "TodoList") != nil {
-            todoListArray = saveData.object(forKey: "TodoList") as! [String]
-        }
     }
     
-    /*
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        table.delegate   = self
-        table.dataSource = self
-        
         //追加画面で入力した内容を取得する
         if saveData.object(forKey: "TodoList") != nil {
             todoListArray = saveData.object(forKey: "TodoList") as! [String]
         }
     }
-     */
-
+    
     //MemoViewControllerからViewControllerへ画面遷移するためのクラス
     @IBAction func unwindToViewController(segue: UIStoryboardSegue) {}
 }

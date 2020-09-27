@@ -29,7 +29,6 @@ class MemoViewController: UIViewController, UITextFieldDelegate {
         super.viewDidLoad()
         //delegateの所在がMemoViewControllerであると指定
         memoTextField.delegate = self
-        // Do any additional setup after loading the view.
     }
 
     @IBAction func saveButton() {
@@ -41,22 +40,20 @@ class MemoViewController: UIViewController, UITextFieldDelegate {
         //配列に要素(入力内容)を追加する
         todoListArray.append(memoTextField.text!)
         dateListArray.append(formatter.string(from: picker.date))
-         //追加ボタンを押したらフィールドを空にする
+         //saveボタンを押したらフィールドを空にする
          memoTextField.text = ""
         //配列の中身をUserDefaultに追加する
         saveData.set(todoListArray, forKey: "TodoList" )
         saveData.set(dateListArray, forKey: "DateList" )
         
-        //一画面分戻らんのやが
-        //self.presentingViewController?.dismiss(animated: true, completion: nil)
         
-        //let viewController: ViewController
-        //viewController.viewDidLoad()
-        /*
-        //UserDefaultsへ書き込み&初期化
-        saveData.set(memoTextField.text, forKey: "TodoList" )
-        memoTextField.text = ""
-         */
+        //Navigation Controllerを取得
+        let nc = self.presentingViewController  as! UINavigationController
+        
+        // 親VCを取り出し
+        let firstVC = nc.viewControllers[nc.viewControllers.count-1] as! ViewController
+        
+        firstVC.table.reloadData()
     }
     
     //Delegate：改行時にキーボードが閉じる．
