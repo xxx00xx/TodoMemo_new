@@ -46,7 +46,6 @@ class MemoViewController: UIViewController, UITextFieldDelegate {
         saveData.set(todoListArray, forKey: "TodoList" )
         saveData.set(dateListArray, forKey: "DateList" )
         
-        
         //Navigation Controllerを取得
         let nc = self.presentingViewController  as! UINavigationController
         
