@@ -23,8 +23,6 @@ class MemoViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet var picker: UIDatePicker!
     @IBOutlet var label: UILabel! //仮置き
     
-    //var memoList:[String] = []
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         //delegateの所在がMemoViewControllerであると指定
@@ -64,14 +62,4 @@ class MemoViewController: UIViewController, UITextFieldDelegate {
     @IBAction func cancelButton() {
         // self.navigationController?.popViewController(animated: true) ←What?
     }
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 }

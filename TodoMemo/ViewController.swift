@@ -11,12 +11,6 @@ import UIKit
 class ViewController:  UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     @IBOutlet var table: UITableView!
-    
-    //@IBOutlet weak var stationList: UITableView!
-    //var stations:[Station] = [Station]()
-    //tableの中身
-    //@IBOutlet var todoLabel: UILabel!
-    //@IBOutlet var dateLabel: UILabel!
 
     //表示するcell数を設定
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
